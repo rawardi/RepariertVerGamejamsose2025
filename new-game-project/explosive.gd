@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation =  $AnimatedSprite2D
+@onready var audio = $AudioStreamPlayer
 
 signal inner_granade
 signal outer_granade
@@ -26,15 +27,19 @@ func _process(delta: float) -> void:
 	if detonating: 
 		explosion_timer += delta #detonation countdown
 		if explosion_timer > 0.4:
-			animation.play("detonation")
-			if inner_granade.is_connected(body_.granade_boost):
-				inner_granade.emit(global_position, 40) #emit granade signal when timer hits detonation timer
-			else:
-				outer_granade.emit(global_position, 20)
-			await animation.animation_finished
-			
-			self.queue_free()
-	
+			if first_time:
+				first_time = false
+				audio.play()
+				animation.play("detonation")
+				if inner_granade.is_connected(body_.granade_boost):
+					inner_granade.emit(global_position, 60) #emit granade signal when timer hits detonation timer
+				else:
+					outer_granade.emit(global_position, 40)
+				await animation.animation_finished
+				
+				self.queue_free()
+
+
 	life_time += delta
 	
 	if life_time > 1000:

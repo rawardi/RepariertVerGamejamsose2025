@@ -7,12 +7,17 @@ extends CharacterBody2D
 @onready var left_card_animation = $AnimatedSprite2D3
 @onready var right_card_animation = $AnimatedSprite2D4
 
+@onready var audio = $AudioStreamPlayer
+
 var explosiv_scene = preload("res://explosive.tscn")
 
 var red_cursor = preload("res://cursor_r.png")
 var yellow_cursor = preload("res://cursor_y.png")
 var blue_cursor = preload("res://cursor_b.png")
 var gray_cursor = preload("res://cursor_g.png")
+
+var walk_sound = load("res://walk_sound.mp3")
+var jump_sound = load("res://jump_sound.wav")
 
 const JUMP_VELOCITY = -700.0
 var MAX_SPEED = 700.0
@@ -67,6 +72,7 @@ func _physics_process(delta):
 		shoot_vector /= shoot_vector.length()
 		velocity = shoot_vector * 1100
 
+		play_jump()
 		animation.play("walljump")
 		cardtypes[cardname_array[i]] -= 1
 
@@ -82,6 +88,7 @@ func _physics_process(delta):
 
 # Handle Jump.
 	if Input.is_action_just_pressed("ui_up") and can_jump:
+		play_jump()
 		velocity.y = JUMP_VELOCITY
 		can_jump = false
 
@@ -106,6 +113,7 @@ func _physics_process(delta):
 
 #double jump ability
 	if Input.is_action_just_pressed("use_card") and current_cardtype == "double" and cardtypes[cardname_array[i]] > 0:
+		play_jump()
 		MAX_SPEED += 50
 		if animation.flip_h == true:
 			velocity.x += -MAX_SPEED/2
@@ -175,6 +183,14 @@ func _physics_process(delta):
 			MAX_SPEED = original_max_speed
 	else:
 		stop_timer = 0
+
+
+	if is_on_floor() and direction:
+		play_run()
+	else:
+		if audio.stream == walk_sound:
+			audio.stream = null
+			audio.stop()
 
 
 #cardmanagement
@@ -251,3 +267,12 @@ func granade_boost(granade_pos, boost_indicator):
 	launched_to_ground = true
 	await get_tree().create_timer(0.5).timeout
 	launched = false
+
+func play_run():
+	if audio.stream != walk_sound: 
+		audio.stream = walk_sound 
+		audio.play()
+
+func play_jump():
+	audio.stream = jump_sound 
+	audio.play()

@@ -520,22 +520,27 @@ autoplay = "idle"
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(314, 128)
 sprite_frames = SubResource("SpriteFrames_1inqp")
 animation = &"double_inactive"
 autoplay = "double_inactive"
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(444, 128)
 sprite_frames = SubResource("SpriteFrames_tkv27")
 animation = &"double_inactive"
 autoplay = "double_inactive"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(379, 128)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_8iv32")
 animation = &"double_inactive"
 autoplay = "double_inactive"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

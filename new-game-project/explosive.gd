@@ -2,16 +2,17 @@ extends CharacterBody2D
 
 @onready var animation =  $AnimatedSprite2D
 @onready var audio = $AudioStreamPlayer
+@onready var body_ = $/root/Node2D/Player
 
 signal inner_granade
 signal outer_granade
 
 var detonating = false
 var explosion_timer = 0
-var body_ = null
 var direction
 var first_time = true
 var life_time = 0.0
+
 
 func _physics_process(delta: float) -> void:
 	if detonating != true:
@@ -24,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
-	if detonating: 
+	if detonating == true: 
 		explosion_timer += delta #detonation countdown
 		if explosion_timer > 0.4:
 			if first_time:
@@ -40,18 +41,11 @@ func _process(delta: float) -> void:
 				self.queue_free()
 
 
-	life_time += delta
-	
-	if life_time > 1000:
-		self.queue_free()
-
-
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		inner_granade.connect(body.granade_boost)
-		body_ = body
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):

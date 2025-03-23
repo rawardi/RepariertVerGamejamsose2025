@@ -14,7 +14,6 @@ func _ready() -> void:
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(level)
-	BG_MUSIC._play_ingame_music()
 
 
 func _on_leaderboard_pressed() -> void:

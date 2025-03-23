@@ -280,13 +280,19 @@ func upwards_boost():
 
 func slow_down():
 	MAX_SPEED = original_max_speed
-	velocity /= 2
+	SPEED = 150
+	velocity.y /= 2
 
 func play_run():
 	if audio.stream != walk_sound: 
 		audio.stream = walk_sound 
+		audio.pitch_scale = 2
+		audio.volume_db = -10
+		
 		audio.play()
 
 func play_jump():
 	audio.stream = jump_sound 
+	audio.pitch_scale = 1
+	audio.volume_db = 0.0
 	audio.play()

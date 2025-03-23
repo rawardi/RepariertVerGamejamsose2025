@@ -16,7 +16,7 @@ var life_time = 0.0
 
 func _physics_process(delta: float) -> void:
 	if detonating != true:
-		velocity += direction * 100
+		velocity += direction * 1000
 	
 	if is_on_ceiling() or is_on_floor() or is_on_wall():
 		detonating = true #starts detonation 
@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if detonating == true: 
 		explosion_timer += delta #detonation countdown
-		if explosion_timer > 0.4:
+		if explosion_timer > 0.25:
 			if first_time:
 				first_time = false
 				audio.play()

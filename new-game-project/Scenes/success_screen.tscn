@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb35isatju5je"]
+[gd_scene load_steps=4 format=3 uid="uid://bb35isatju5je"]
 
 [ext_resource type="Texture2D" uid="uid://cursckyo2dcwx" path="res://Assets/PARALAXBACKGROUND_LAYERED.png" id="1_2davo"]
 [ext_resource type="Script" path="res://Scenes/success_screen.gd" id="1_8y8cf"]
 [ext_resource type="Texture2D" uid="uid://dysvow5u1tsey" path="res://Assets/Background_End_Screen.png" id="2_20w5w"]
-[ext_resource type="PackedScene" uid="uid://dgygkbtm0burn" path="res://addons/quiver_leaderboards/leaderboard_ui.tscn" id="4_6w261"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -55,12 +54,17 @@ offset_bottom = 407.0
 grow_horizontal = 2
 bbcode_enabled = true
 
-[node name="LeaderboardUI" parent="." instance=ExtResource("4_6w261")]
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 1
-offset_left = 60.0
-offset_top = 534.0
-offset_right = -1160.0
-offset_bottom = -203.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -900.0
+offset_top = 453.0
+offset_right = -200.0
+offset_bottom = 883.0
+grow_horizontal = 2
+bbcode_enabled = true
 
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -80,7 +80,7 @@ func _physics_process(delta):
 
 		launched_to_ground = false
 		launched = true
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.5).timeout
 		launched_to_ground = true
 		await get_tree().create_timer(0.5).timeout
 		launched = false
@@ -276,6 +276,10 @@ func granade_boost(granade_pos, boost_indicator):
 
 func upwards_boost():
 	velocity.y = -700
+
+func slow_down():
+	MAX_SPEED = original_max_speed
+	velocity /= 2
 
 func play_run():
 	if audio.stream != walk_sound: 

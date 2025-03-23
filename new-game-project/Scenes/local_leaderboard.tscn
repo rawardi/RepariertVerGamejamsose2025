@@ -38,6 +38,7 @@ offset_bottom = 1010.0
 bbcode_enabled = true
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1775.0
 offset_top = 1008.0
 offset_right = 1901.0

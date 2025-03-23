@@ -48,6 +48,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 29.0
 offset_top = 866.0
 offset_right = 315.0
@@ -56,6 +57,7 @@ icon = SubResource("AtlasTexture_fa1jp")
 expand_icon = true
 
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 29.0
 offset_top = 767.0
 offset_right = 315.0
@@ -64,6 +66,7 @@ icon = SubResource("AtlasTexture_srb4i")
 expand_icon = true
 
 [node name="Button4" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1730.0
 offset_top = 988.0
 offset_right = 1891.0

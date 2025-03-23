@@ -2,7 +2,7 @@ extends Node2D
 
 @export var leaderboard="res://Scenes/Leaderboardtest.tscn"
 
-var level = preload("res://Scenes/level_1.tscn")
+var level = preload("res://Level select.tscn")
 var credits = preload("res://Scenes/credits.tscn")
 var rankings = preload("res://Scenes/local_leaderboard.tscn")
 

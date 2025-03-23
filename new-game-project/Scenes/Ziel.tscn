@@ -1,10 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwy6ct3ui8xc8"]
+[gd_scene load_steps=12 format=3 uid="uid://bwy6ct3ui8xc8"]
 
 [ext_resource type="Script" path="res://Scripts/ziel.gd" id="1_x6p2q"]
-[ext_resource type="Texture2D" uid="uid://dvlm3wvccdenk" path="res://Scenes/End.png" id="2_rqiqf"]
+[ext_resource type="Texture2D" uid="uid://bnjb64pvl2pbc" path="res://EndAnimation.png" id="2_k2a3c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwxgq"]
 size = Vector2(327, 307)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wo3s"]
+atlas = ExtResource("2_k2a3c")
+region = Rect2(0, 0, 333, 317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy3ru"]
+atlas = ExtResource("2_k2a3c")
+region = Rect2(0, 0, 333, 317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpapi"]
+atlas = ExtResource("2_k2a3c")
+region = Rect2(333, 0, 333, 317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uncqb"]
+atlas = ExtResource("2_k2a3c")
+region = Rect2(666, 0, 333, 317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kev6e"]
+atlas = ExtResource("2_k2a3c")
+region = Rect2(999, 0, 333, 317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esj3n"]
+atlas = ExtResource("2_k2a3c")
+region = Rect2(1332, 0, 333, 317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqtti"]
+atlas = ExtResource("2_k2a3c")
+region = Rect2(1665, 0, 333, 317)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yepi0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wo3s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy3ru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpapi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uncqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kev6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esj3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqtti")
+}],
+"loop": false,
+"name": &"end",
+"speed": 5.0
+}]
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_x6p2q")
@@ -13,8 +75,10 @@ script = ExtResource("1_x6p2q")
 position = Vector2(1.5, -89.5)
 shape = SubResource("RectangleShape2D_lwxgq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(96, -387)
-texture = ExtResource("2_rqiqf")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11, -89)
+sprite_frames = SubResource("SpriteFrames_yepi0")
+animation = &"end"
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

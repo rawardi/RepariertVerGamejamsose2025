@@ -84,6 +84,13 @@ position = Vector2(707, 696)
 scale = Vector2(3.075, 2.80741)
 texture = ExtResource("5_yjjq6")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 132.0
+offset_right = 1920.0
+offset_bottom = 366.0
+bbcode_enabled = true
+text = "[font_size=128][center]Hex-press"
+
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

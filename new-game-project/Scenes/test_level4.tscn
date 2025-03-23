@@ -87,6 +87,7 @@ scale = Vector2(2, 2)
 [node name="Ziel" parent="." instance=ExtResource("7_mbtps")]
 position = Vector2(3432, -448)
 scale = Vector2(0.7, 0.8)
+level_num = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-113, 1075)

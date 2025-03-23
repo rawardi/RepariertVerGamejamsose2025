@@ -201,7 +201,7 @@ position = Vector2(750, 373)
 cardtype = "double"
 
 [node name="Area2D2" parent="." instance=ExtResource("5_msfm4")]
-position = Vector2(392, -159)
+position = Vector2(2817, 187)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_rpq6r")]
 

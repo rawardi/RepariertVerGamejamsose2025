@@ -10,8 +10,8 @@ var playertime :float
 var best_time_path = "res://bestTime.txt"
 var best_time_name_path = "res://bestTimeName.txt"
 
-var best_time : Array = [0, 0, 0, 0, 0]
-var best_time_name : Array = ["", "", "", "", ""]
+var best_time : Array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+var best_time_name : Array = ["", "", "", "", "", "", "", "", "", ""]
 
 var i = 6
 
@@ -21,7 +21,6 @@ func _ready() -> void:
 	playertime = int(playertime)
 	playertime /= 1000
 	BG_MUSIC._play_menu_music()
-
 
 
 	endtext.text = "[center][font_size=128]WICKED FINISH![/font_size][p][center][font_size=32]Your Time: " + str(playertime) + " seconds"
@@ -88,7 +87,7 @@ func _save_best_time_name():
 func display_ranking():
 	rankingtext.text = "[center][font_size=64]Rankings[p][font_size=32]" 
 	var r = 0
-	while r < best_time.size():
+	while r < 5:
 		if r == i:
 			rankingtext.text += "[color=yellow]"
 		if best_time[r] != 0:

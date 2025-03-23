@@ -4,6 +4,7 @@ extends Node2D
 
 var level = preload("res://Scenes/level_1.tscn")
 var credits = preload("res://Scenes/credits.tscn")
+var rankings = preload("res://Scenes/local_leaderboard.tscn")
 
 
 var leaderboardisshown=false
@@ -17,12 +18,13 @@ func _on_start_pressed() -> void:
 
 
 func _on_leaderboard_pressed() -> void:
-	if leaderboardisshown :
-		$LeaderboardUI.hide()
-		leaderboardisshown=false
-	else :
-		$LeaderboardUI.show()
-		leaderboardisshown=true
+	get_tree().change_scene_to_packed(rankings)
+#	if leaderboardisshown :
+#		$LeaderboardUI.hide()
+#		leaderboardisshown=false
+#	else :
+#		$LeaderboardUI.show()
+#		leaderboardisshown=true
 
 
 func _on_quit_pressed() -> void:

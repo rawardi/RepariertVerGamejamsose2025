@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://0j6glfj8h5s7"]
+[gd_scene load_steps=5 format=3 uid="uid://0j6glfj8h5s7"]
+
+[ext_resource type="Script" path="res://Scenes/local_leaderboard.gd" id="1_t5ha7"]
+[ext_resource type="Texture2D" uid="uid://cursckyo2dcwx" path="res://Assets/PARALAXBACKGROUND_LAYERED.png" id="1_x4il0"]
+[ext_resource type="Texture2D" uid="uid://dysvow5u1tsey" path="res://Assets/Background_End_Screen.png" id="2_vu6jv"]
+[ext_resource type="Texture2D" uid="uid://pqonlq6so7cy" path="res://Assets/Background_Title_Screen.png" id="3_6xwiv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +12,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_t5ha7")
+
+[node name="ParalaxbackgroundLayered" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_x4il0")
+
+[node name="BackgroundTitleScreen" type="Sprite2D" parent="."]
+position = Vector2(1749, 537)
+scale = Vector2(4, 4)
+texture = ExtResource("3_6xwiv")
+flip_h = true
+
+[node name="BackgroundEndScreen" type="Sprite2D" parent="."]
+position = Vector2(771, 561)
+scale = Vector2(4, 4)
+texture = ExtResource("2_vu6jv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 108.0
+offset_right = 879.0
+offset_bottom = 1010.0
+bbcode_enabled = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1775.0
+offset_top = 1008.0
+offset_right = 1901.0
+offset_bottom = 1062.0
+theme_override_font_sizes/font_size = 24
+text = "RETURN"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

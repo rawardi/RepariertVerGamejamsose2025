@@ -34,3 +34,14 @@ bbcode_enabled = true
 position = Vector2(1146, 578)
 scale = Vector2(4, 4)
 texture = ExtResource("4_gyhyb")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1775.0
+offset_top = 1008.0
+offset_right = 1901.0
+offset_bottom = 1062.0
+theme_override_font_sizes/font_size = 24
+text = "RETURN"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://dses5w6sjpe2"]
+[gd_scene load_steps=70 format=3 uid="uid://dses5w6sjpe2"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_15r4l"]
 [ext_resource type="Texture2D" uid="uid://dhxxifcbvnyy8" path="res://Assets/Player/Animation_Double_Jump-Sheet.png" id="2_80e6o"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cahycgs8sd8ro" path="res://Card_Explosion_Active.png" id="11_8pwgo"]
 [ext_resource type="Texture2D" uid="uid://tjbnkvih2ia7" path="res://Card_Explosion_inactive.png" id="12_w2beu"]
 [ext_resource type="Texture2D" uid="uid://43ntetko7sb5" path="res://Card_Wall_Jump_inactive.png" id="13_njdw7"]
+[ext_resource type="Texture2D" uid="uid://bur4ww1qafost" path="res://arrow_wj.png" id="15_rra5q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxrnp"]
 height = 51.0
@@ -506,7 +507,7 @@ position = Vector2(0, 1.5)
 shape = SubResource("CapsuleShape2D_gxrnp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(45, -42)
+position = Vector2(35, -35)
 zoom = Vector2(2, 2)
 
 [node name="Timer" type="Timer" parent="."]
@@ -542,5 +543,11 @@ animation = &"double_inactive"
 autoplay = "double_inactive"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ArrowWj" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("15_rra5q")
+centered = false
+offset = Vector2(0, -48)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

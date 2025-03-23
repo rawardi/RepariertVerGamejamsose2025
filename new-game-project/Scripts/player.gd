@@ -58,6 +58,7 @@ func _physics_process(delta):
 
 #wall clutch when shift pressed
 	if is_on_wall() and wallclutch: 
+		$ArrowWj.visible = true
 		velocity.x=0
 		velocity.y=0
 		animation.play("wallclutch")
@@ -65,6 +66,7 @@ func _physics_process(delta):
 
 #launch when shift released
 	if Input.is_action_just_released("use_card") and wallclutch:
+		$ArrowWj.visible = false
 		MAX_SPEED += 100
 		wallclutch = false
 		var shoot_vector = global_position - get_global_mouse_position()
@@ -173,6 +175,10 @@ func _physics_process(delta):
 			stop_timer = 0
 	
 	move_and_slide()
+
+	var angle_radians = (global_position - get_global_mouse_position()).angle() # Calculates the angle in radians
+	var angle_degrees = rad_to_deg(angle_radians) + 90
+	$ArrowWj.rotation_degrees = angle_degrees - 45
 
 
 #tracks time while clutching, deletes buildup speed if stood still for too long

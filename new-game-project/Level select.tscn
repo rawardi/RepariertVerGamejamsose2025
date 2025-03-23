@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7dvbl2rjsf8r"]
+
+[ext_resource type="Texture2D" uid="uid://cursckyo2dcwx" path="res://Assets/PARALAXBACKGROUND_LAYERED.png" id="1_nv0is"]
+[ext_resource type="Script" path="res://level_select.gd" id="1_u2c1p"]
+[ext_resource type="Texture2D" uid="uid://pqonlq6so7cy" path="res://Assets/Background_Title_Screen.png" id="2_pultw"]
+[ext_resource type="Texture2D" uid="uid://xrsyrvcegy3a" path="res://more_Buttons_Title_Screen.png" id="3_7fvrr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olda0"]
+atlas = ExtResource("3_7fvrr")
+region = Rect2(11.8703, 78.3667, 121.739, 38.4971)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa1jp"]
+atlas = ExtResource("3_7fvrr")
+region = Rect2(13.3879, 126.729, 120.92, 36.1009)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srb4i"]
+atlas = ExtResource("3_7fvrr")
+region = Rect2(13.5353, 172.506, 122.036, 36.6425)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u2c1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(958.522, 544.266)
+scale = Vector2(1.0005, 1.00234)
+texture = ExtResource("1_nv0is")
+
+[node name="BackgroundTitleScreen" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-0.521835, -8.41689)
+scale = Vector2(3.98368, 3.95243)
+texture = ExtResource("2_pultw")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 964.0
+offset_right = 315.0
+offset_bottom = 1054.0
+icon = SubResource("AtlasTexture_olda0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 866.0
+offset_right = 315.0
+offset_bottom = 956.0
+icon = SubResource("AtlasTexture_fa1jp")
+expand_icon = true
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 767.0
+offset_right = 315.0
+offset_bottom = 857.0
+icon = SubResource("AtlasTexture_srb4i")
+expand_icon = true
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 1730.0
+offset_top = 988.0
+offset_right = 1891.0
+offset_bottom = 1054.0
+theme_override_font_sizes/font_size = 32
+text = "RETURN"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

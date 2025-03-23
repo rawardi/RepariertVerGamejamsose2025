@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwy6ct3ui8xc8"]
+[gd_scene load_steps=4 format=3 uid="uid://bwy6ct3ui8xc8"]
 
 [ext_resource type="Script" path="res://Scripts/ziel.gd" id="1_x6p2q"]
+[ext_resource type="Texture2D" uid="uid://dvlm3wvccdenk" path="res://Scenes/End.png" id="2_rqiqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwxgq"]
-size = Vector2(128, 128)
+size = Vector2(327, 307)
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_x6p2q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -89.5)
 shape = SubResource("RectangleShape2D_lwxgq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(96, -387)
+texture = ExtResource("2_rqiqf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

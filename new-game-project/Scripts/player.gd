@@ -47,6 +47,7 @@ var cursor_array = [blue_cursor, yellow_cursor, red_cursor, gray_cursor]
 func _physics_process(delta):
 	direction = Input.get_axis("ui_left", "ui_right")
 
+
 #implements gravity
 	if not is_on_floor() and not wallclutch:
 		velocity.y += gravity * delta

@@ -70,7 +70,7 @@ tile_set = SubResource("TileSet_gid5l")
 [node name="Player" parent="." instance=ExtResource("2_88mwl")]
 position = Vector2(-408, -27)
 
-[node name="CanvasLayer" parent="Player" instance=ExtResource("3_i4cgr")]
+[node name="CanvasLayer2" parent="Player" instance=ExtResource("3_i4cgr")]
 
 [node name="Cards" type="Node2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dses5w6sjpe2"]
+[gd_scene load_steps=71 format=3 uid="uid://dses5w6sjpe2"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_15r4l"]
 [ext_resource type="Texture2D" uid="uid://dhxxifcbvnyy8" path="res://Assets/Player/Animation_Double_Jump-Sheet.png" id="2_80e6o"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://tjbnkvih2ia7" path="res://Card_Explosion_inactive.png" id="12_w2beu"]
 [ext_resource type="Texture2D" uid="uid://43ntetko7sb5" path="res://Card_Wall_Jump_inactive.png" id="13_njdw7"]
 [ext_resource type="Texture2D" uid="uid://bur4ww1qafost" path="res://arrow_wj.png" id="15_rra5q"]
+[ext_resource type="PackedScene" uid="uid://cauonef4dchjo" path="res://Scenes/Timer.tscn" id="16_u1xlw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxrnp"]
 height = 51.0
@@ -549,5 +550,7 @@ visible = false
 texture = ExtResource("15_rra5q")
 centered = false
 offset = Vector2(0, -48)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("16_u1xlw")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

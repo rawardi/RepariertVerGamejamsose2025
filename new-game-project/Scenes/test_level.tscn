@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cauonef4dchjo" path="res://Scenes/Timer.tscn" id="3_g8c5j"]
 [ext_resource type="PackedScene" uid="uid://unfi7dw26ruy" path="res://Scenes/cards.tscn" id="4_44l08"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itqas"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dqi2f"]
 texture = ExtResource("1_vhjvi")
 margins = Vector2i(16, 16)
 texture_region_size = Vector2i(32, 32)
@@ -59,7 +59,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
-sources/2 = SubResource("TileSetAtlasSource_itqas")
+sources/2 = SubResource("TileSetAtlasSource_dqi2f")
 
 [node name="Test_Level" type="Node2D"]
 

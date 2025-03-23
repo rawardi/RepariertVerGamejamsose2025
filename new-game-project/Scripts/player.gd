@@ -274,6 +274,9 @@ func granade_boost(granade_pos, boost_indicator):
 	await get_tree().create_timer(0.5).timeout
 	launched = false
 
+func upwards_boost():
+	velocity.y = -700
+
 func play_run():
 	if audio.stream != walk_sound: 
 		audio.stream = walk_sound 

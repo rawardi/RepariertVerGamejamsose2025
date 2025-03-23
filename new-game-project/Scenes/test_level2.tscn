@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://y55v15thh0it"]
+[gd_scene load_steps=8 format=4 uid="uid://y55v15thh0it"]
 
 [ext_resource type="Texture2D" uid="uid://bprukeo58sjst" path="res://Assets/Tilemap.png" id="1_3wssc"]
 [ext_resource type="PackedScene" uid="uid://dses5w6sjpe2" path="res://Scenes/Player.tscn" id="2_88mwl"]
 [ext_resource type="PackedScene" uid="uid://cauonef4dchjo" path="res://Scenes/Timer.tscn" id="3_i4cgr"]
 [ext_resource type="PackedScene" uid="uid://unfi7dw26ruy" path="res://Scenes/cards.tscn" id="4_cc1f4"]
+[ext_resource type="PackedScene" uid="uid://derifjoe7b0dl" path="res://updraft.tscn" id="5_mlogw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p6g3h"]
 texture = ExtResource("1_3wssc")
@@ -108,3 +109,15 @@ cardtype = "walljump"
 [node name="Area2D9" parent="Cards" instance=ExtResource("4_cc1f4")]
 position = Vector2(5133, -352)
 cardtype = "double"
+
+[node name="Area2D" parent="." instance=ExtResource("5_mlogw")]
+position = Vector2(-101, 15)
+
+[node name="Area2D2" parent="." instance=ExtResource("5_mlogw")]
+position = Vector2(-101, -17)
+
+[node name="Area2D3" parent="." instance=ExtResource("5_mlogw")]
+position = Vector2(-101, -49)
+
+[node name="Area2D4" parent="." instance=ExtResource("5_mlogw")]
+position = Vector2(-591, 16)
